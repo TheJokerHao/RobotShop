@@ -70,14 +70,14 @@ public class OkHttpHelper {
     /**
      * get方式联网请求数据
      */
-//    public void get(Context context, String relativeUrl, JSONObject params, HUDCallBack baseCallBack, Type clz) {
-//        try {
-//            Request request = buildRequest(context, getAbsoluteUrl(context, relativeUrl), params, HttpMethodType.GET);
-//            doRequest(context, request, baseCallBack, clz);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//    }
+    public void get(Context context, String relativeUrl, JSONObject params, HUDCallBack baseCallBack, Type clz) {
+        try {
+            Request request = buildRequest(context, getAbsoluteUrl(context, relativeUrl), params, HttpMethodType.GET);
+            doRequest(context, request, baseCallBack, clz);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 
     /**
@@ -135,6 +135,7 @@ public class OkHttpHelper {
             } else if (httpMethodType == HttpMethodType.POST) {
                 FormBody.Builder formBodyBuilder = new FormBody.Builder();
                 String relativeUrl = "";
+                L.i(params);
                 if (null != params) {
                     Iterator<String> it = params.keys();
                     while (it.hasNext()) {
@@ -150,12 +151,15 @@ public class OkHttpHelper {
                 builder.url(url);
                 builder.post(body);
 
-                L.i("OkHttp POST url:" + url + "?" + relativeUrl);
 
+                L.i("OkHttp POST url:" + url);
 
-                L.i("\n\n\n\n-------------------------------------------------------------------------------------------------------------------------------");
-                L.i("PRETTYLOGGER url:" + url + "  params:" + params.toString());
-                L.i("-------------------------------------------------------------------------------------------------------------------------------\n\n\n\n");
+//                L.i("OkHttp POST url:" + url + "?" + relativeUrl);
+//
+//
+//                L.i("\n\n\n\n-------------------------------------------------------------------------------------------------------------------------------");
+//                L.i("PRETTYLOGGER url:" + url + "  params:" + params.toString());
+//                L.i("-------------------------------------------------------------------------------------------------------------------------------\n\n\n\n");
             }
             return builder.build();
         } catch (JSONException e) {
@@ -194,15 +198,24 @@ public class OkHttpHelper {
                             Logger.json(resStr);
                         }
 
-                        if (!jsonObject.getString("code").equals("000")) {
-                            callBackFail(context, jsonObject.getString("message"));
-                            return;
-                        }
-                        if ((jsonObject.getJSONObject("data").getString("state")).equals("0")) {
+//                        if (!jsonObject.getString("code").equals("201")) {
+//                            callBackFail(context, jsonObject.getString("message"));
+//                            return;
+//                        }
+                        //TODO   这里需要修改
+//                        if ((jsonObject.getJSONObject("data").getString("state")).equals("0")) {
+//                            callBackSuccess(response, baseCallBack, gson.fromJson(resStr, clz));
+//                        } else {
+//                            callBackError(context, response, baseCallBack, jsonObject.getJSONObject("data").getString("msg"));
+//                        }
+
+                        if (jsonObject.getString("code").equals("201")) {
                             callBackSuccess(response, baseCallBack, gson.fromJson(resStr, clz));
                         } else {
                             callBackError(context, response, baseCallBack, jsonObject.getJSONObject("data").getString("msg"));
                         }
+
+
 
                     } catch (JsonSyntaxException e) {
                         L.i(e.toString());
@@ -239,12 +252,14 @@ public class OkHttpHelper {
         Iterator<String> it = paObject.keys();
         while (it.hasNext()) {
             String key = it.next().toString();
-//            param.put(key, DetectTool.chinaToUnicode(paObject.getString(key)));
+            param.put(key, DetectTool.chinaToUnicode(paObject.getString(key)));
             param.put(key, paObject.getString(key));
         }
 
-        si = DetectTool.getSign(param);//签名
-        pa = EncryptUtil.encrypt(paObject.toString());//DES加密
+//        si = DetectTool.getSign(param);//签名
+//        pa = EncryptUtil.encrypt(paObject.toString());//DES加密
+        si = param.toString();
+//        pa = paObject.toString();
 
         Request.Builder builder = new Request.Builder();
 
@@ -252,32 +267,24 @@ public class OkHttpHelper {
 
         if (httpMethodType == HttpMethodType.GET) {
             if (null != params) {
-
                 url += "si=" + si + "&pa=" + pa;
             }
-
             builder.url(url);
             builder.get();
             L.i("OkHttp GET url:" + url);
 
         } else if (httpMethodType == HttpMethodType.POST) {
-
-
             FormBody.Builder encodingBuilder = new FormBody.Builder();
-
-            encodingBuilder.add("si", si);
-            encodingBuilder.add("pa", pa);
-
+            encodingBuilder.add("", si);
+//            encodingBuilder.add("", pa);
             RequestBody body = encodingBuilder.build();
-
-
             builder.url(url);
             builder.post(body);
+            L.i(url);
 
-            L.i("OkHttp POST url:" + url + "?si=" + si + "&pa=" + pa);
-
+            L.i("OkHttp POST url:" + url + "?" + si);
+//            L.i("OkHttp POST url:" + url + "?si=" + si + "&pa=" + pa);
         }
-
         return builder.build();
     }
 
@@ -342,14 +349,14 @@ public class OkHttpHelper {
         String ts = DetectTool.getTS();
 
         L.i("--------------------------------------时间" + ts);
-        allDataObject.put("m", DetectTool.getType());
-        allDataObject.put("p", DetectTool.getAppType());
-//        allDataObject.put("u", DetectTool.getToken());
-        //TODO  修改来获取版本名称的获取方式
-//        allDataObject.put("v", v != null ? v : DetectTool.getVersionName());
-        allDataObject.put("v", v != null ? v : DetectTool.getAPPVersionCodeFromAPP(context));
-//        allDataObject.put("i", DetectTool.getIMEI(context));
-        allDataObject.put("t", ts);
+//        allDataObject.put("m", DetectTool.getType());
+//        allDataObject.put("p", DetectTool.getAppType());
+////        allDataObject.put("u", DetectTool.getToken());
+//        //TODO  修改来获取版本名称的获取方式
+////        allDataObject.put("v", v != null ? v : DetectTool.getVersionName());
+//        allDataObject.put("v", v != null ? v : DetectTool.getAPPVersionCodeFromAPP(context));
+////        allDataObject.put("i", DetectTool.getIMEI(context));
+//        allDataObject.put("t", ts);
         return allDataObject;
     }
 

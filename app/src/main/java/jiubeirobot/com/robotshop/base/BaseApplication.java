@@ -8,6 +8,7 @@ import com.lzy.okhttputils.OkHttpUtils;
 import butterknife.ButterKnife;
 import jiubeirobot.com.robotshop.BuildConfig;
 import jiubeirobot.com.robotshop.service.ScannerService;
+import jiubeirobot.com.robotshop.utils.L;
 
 /**
  * 类描述    :应用上下文，应用生命周期管理，在这里初始化等
@@ -21,11 +22,6 @@ import jiubeirobot.com.robotshop.service.ScannerService;
 public class BaseApplication extends Application {
     private ActivityControl activityControl;
     private static BaseApplication baseApplication;
-    public static int currentMode;//定义的购买模式
-    public final static int FAST_BUY = 0;//快速购买
-    public final static int MEMBER_BUY = 1;//会员购买
-    public final static int LOCAL_BUY = 2;//新增的本地购买'
-//    private RefWatcher refWatcher;
 
     public static BaseApplication getInstance() {
         return baseApplication;
@@ -41,22 +37,33 @@ public class BaseApplication extends Application {
         ButterKnife.setDebug(BuildConfig.DEBUG);
 
         //启动检测扫码枪的后台服务
-        Intent intent = new Intent(this, ScannerService.class);
-        startService(intent);
+        start();
         OkHttpUtils.init(this);
         if (BuildConfig.DEBUG) {
-//            com.wanjian.sak.SAK.init(this);
-//            refWatcher = LeakCanary.install(this);
+            L.i(BuildConfig.SERVER_IP);
         }
 
     }
+
+    public void start() {
+        Intent intent = new Intent(this, ScannerService.class);
+        startService(intent);
+
+    }
+
+    public void stop() {
+        Intent intent = new Intent(this, ScannerService.class);
+        stopService(intent);
+    }
+
+
 
     @Override
     public void onTerminate() {
         super.onTerminate();
         exitApp();
-        Intent intent = new Intent(this, ScannerService.class);
-        stopService(intent);
+        stop();
+
     }
 
     /**

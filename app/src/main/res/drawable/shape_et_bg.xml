@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+
+
+    <solid android:color="@color/color_white" />
+    <corners android:radius="@dimen/shopping_list_filter_item_circular"
+        />
+    <!-- 描边 -->
+    <stroke
+        android:width="2dp"
+        android:color="#dcdcdc" />
+</shape>

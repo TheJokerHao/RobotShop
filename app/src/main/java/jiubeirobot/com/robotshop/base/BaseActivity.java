@@ -16,8 +16,11 @@ import com.kaopiz.kprogresshud.KProgressHUD;
 import butterknife.ButterKnife;
 import jiubeirobot.com.robotshop.R;
 import jiubeirobot.com.robotshop.common.core.HUDFactory;
+import jiubeirobot.com.robotshop.data.net.INetResult;
+import jiubeirobot.com.robotshop.data.net.IUIBase;
 import jiubeirobot.com.robotshop.receivers.NetReceivers;
 import jiubeirobot.com.robotshop.utils.L;
+import jiubeirobot.com.robotshop.utils.T;
 
 /**
  * ==========================
@@ -27,7 +30,7 @@ import jiubeirobot.com.robotshop.utils.L;
  * ==========================
  */
 
-public abstract class BaseActivity extends AppCompatActivity implements IUIBase{
+public abstract class BaseActivity extends AppCompatActivity implements IUIBase,INetResult {
 
 
     private NetReceivers mReceiver = new NetReceivers();//网络广播
@@ -71,21 +74,21 @@ public abstract class BaseActivity extends AppCompatActivity implements IUIBase{
                 .setDimAmount(0.3f).show();
     }
 
-//    @Override
-//    public void requestBefore(int flag) {
-//        showHUD();
-//    }
+    @Override
+    public void requestBefore(int flag) {
+        showHUD();
+    }
 
-//    @Override
-//    public void onError(String error, int flag) {
-//        dismissHUD();
-//        if (error.equals("获取商品信息失败")) {
-////            T.showToCenter("此酒品未录入库存或未上架");
-//        } else {
-//            Log.d("print", "onError: " + error);
-//            T.showToCenter(error);
-//        }
-//    }
+    @Override
+    public void onError(String error, int flag) {
+        dismissHUD();
+        if (error.equals(error)) {
+            T.showToCenter(error);
+        } else {
+            Log.d("print", "onError: " + error);
+            T.showToCenter(error);
+        }
+    }
 
     @Override
     public void dismissHUD() {
@@ -122,5 +125,4 @@ public abstract class BaseActivity extends AppCompatActivity implements IUIBase{
         }
         return super.onTouchEvent(event);
     }
-
 }

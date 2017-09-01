@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#231A37"
+    android:orientation="vertical"
+    tools:context="jiubeirobot.com.robotshop.ui.activity.manange.SysSetActivity">
+
+
+    <include layout="@layout/title_search_icon_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+       android:gravity="center"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <Button
+            android:id="@+id/btn_order_manage"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:text="@string/btn_order_manage" />
+
+        <Button
+            android:id="@+id/btn_version_up"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:text="@string/btn_version_up" />
+
+
+        <Button
+            android:id="@+id/btn_clear_cache"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:text="@string/btn_clear_cache" />
+
+
+        <Button
+            android:id="@+id/btn_Initia_set"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:text="@string/btn_Initia_set" />
+
+        <Button
+            android:id="@+id/btn_about_us"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:text="@string/btn_about_us" />
+    </LinearLayout>
+</LinearLayout>

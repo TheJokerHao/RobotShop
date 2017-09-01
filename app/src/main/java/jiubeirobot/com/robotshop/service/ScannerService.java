@@ -10,6 +10,8 @@ import android.serialport.scannerLib;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
+import java.util.Arrays;
+
 import jiubeirobot.com.robotshop.receivers.ScannerReceivers;
 
 
@@ -17,14 +19,10 @@ import jiubeirobot.com.robotshop.receivers.ScannerReceivers;
  * 类描述    :监控扫码枪数据
  * 包名      : com.fecmobile.jiubeirobot.service
  * 类名称    : ScannerService
- * 创建人    : ghy
- * 创建时间  : 2017/3/24 14:30
  * 修改人    :
  * 修改时间  :
  * 修改备注  :
  */
-
-
 public class ScannerService extends Service {
     private scannerLib scanner;
     private ScannerReceivers scan;
@@ -67,13 +65,13 @@ public class ScannerService extends Service {
         switch (msg.what) {
             case 0:
                 String val = new String(scanner.scannerRx_Buffer);
-                Log.d("print", "RefreshDisplay: " + val);
+                Log.d("print", "RefreshDisplay: 获取到的值"+ val);
                 Intent intent = new Intent();
                 intent.setAction(ScannerReceivers.ACTION);
                 intent.putExtra(ScannerReceivers.DATA, val);
                 sendBroadcast(intent);
                 //msg.arg1 可以获取接收字符长度
-                //Arrays.fill(scanner.scannerRx_Buffer, (byte) 0);
+                Arrays.fill(scanner.scannerRx_Buffer, (byte) 0);
                 break;
         }
     }

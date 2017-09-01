@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="jiubeirobot.com.robotshop.ui.activity.manange.ShowSetActivity">
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+        <include layout="@layout/title_search_icon_title" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginRight="@dimen/common_margin70dp"
+            android:gravity="center">
+
+            <jiubeirobot.com.robotshop.common.view.CircularImageView
+                android:id="@+id/civ_head_photo"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="110dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ss" />
+
+            <LinearLayout
+                android:id="@+id/local_tv_chateau"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/common_margin20dp"
+                android:layout_marginTop="92dp"
+                android:layout_toRightOf="@+id/civ_head_photo"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/common_size18sp"
+                    tools:text="13430674043" />
+
+
+                <TextView
+                    android:id="@+id/tv_account_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/common_size18sp"
+                    tools:text="13430674043" />
+
+                <TextView
+                    android:id="@+id/tv_user_account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/common_size22sp"
+                    tools:text="小虎" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+q
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin1dp"
+        android:background="@color/color_main" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/common_margin10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/common_margin10dp"
+            android:text="当前编号:"
+            android:textSize="@dimen/common_size24sp" />
+
+        <TextView
+            android:id="@+id/tv_account_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/common_margin10dp"
+            android:textSize="@dimen/common_size24sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/common_margin10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/common_margin10dp"
+            android:text="位置信息:"
+            android:textSize="@dimen/common_size24sp" />
+
+        <TextView
+            android:id="@+id/tv_address_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/common_margin10dp"
+            android:textSize="@dimen/common_size24sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/common_margin10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/common_margin10dp"
+            android:text="店铺二维码:"
+            android:textSize="@dimen/common_size24sp" />
+
+        <ImageView
+            android:id="@+id/iv_Members_invited"
+            android:layout_width="@dimen/common_margin200dp"
+            android:layout_height="@dimen/common_margin200dp"
+            android:layout_margin="@dimen/common_margin10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/defualt_img" />
+
+
+        <ImageView
+            android:id="@+id/iv_open_shop"
+            android:layout_width="@dimen/common_margin200dp"
+            android:layout_height="@dimen/common_margin200dp"
+            android:layout_margin="@dimen/common_margin10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/defualt_img" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

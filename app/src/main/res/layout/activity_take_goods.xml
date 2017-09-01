@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="jiubeirobot.com.robotshop.ui.activity.manange.TakeGoodsActivity">
+
+
+    <include layout="@layout/title_search_icon_title" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:layout_width="@dimen/common_margin0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="提货方法一" />
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="直接输入提货码" />
+
+
+            <EditText
+                android:id="@+id/et_extract_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_et_bg"
+                android:hint="请输入提货号码" />
+
+            <Button
+                android:id="@+id/btn_takegods"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="提货" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/common_margin0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="提货方法二" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="请将提货二维码正对右侧的扫码器" />
+
+
+            <TextView
+                android:id="@+id/tv_extract_numaber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="提货码"
+
+                />
+
+            <Button
+                android:id="@+id/btn_extract"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="提货" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

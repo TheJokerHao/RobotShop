@@ -3,19 +3,29 @@
     package="jiubeirobot.com.robotshop">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
         android:name=".base.BaseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
             android:name=".ui.activity.MainActivity"
+            android:screenOrientation="landscape" />
+        <!-- 初始化设置信息的activity -->
+        <activity
+            android:name=".ui.activity.SetRobotActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="landscape">
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,8 +33,60 @@
                 <category android:name="android.intent.category.HOME" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-
         </activity>
+        <!-- 显示商品列表的activity -->
+        <activity
+            android:name=".ui.activity.shop.ShopBuyListActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
+
+        <!-- 系统设置的activity -->
+        <activity android:name=".ui.activity.manange.SysSetActivity" />
+        <!-- 订单 -->
+        <activity android:name=".ui.activity.shop.ShopOrderActivity" />
+        <!-- 登录管理 -->
+        <activity
+            android:name=".ui.activity.manange.LoginManagerActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
+        <!-- 检查订单 -->
+        <activity
+            android:name=".ui.activity.shop.CheckOrderActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
+
+        <!-- 监控扫码枪的服务 -->
+        <service android:name=".service.ScannerService" />
+        <service android:name=".service.ExtractService" />
+
+        <receiver android:name=".ui.activity.manange.TakeGoodsActivity$ExtractReceivers" />
+
+        <!-- 提货 -->
+        <activity
+            android:name=".ui.activity.manange.TakeGoodsActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
+        <!-- 购物车 -->
+        <activity android:name=".ui.activity.shop.ShoppingCartActivity" />
+        <!-- 关于我们 -->
+        <activity android:name=".ui.activity.manange.AboutUSActivity" />
+        <!-- 初始的显示 -->
+        <activity android:name=".ui.activity.manange.ShowSetActivity" />
+        <!-- 扫码返回 -->
+        <activity
+            android:name=".ui.activity.ScanResultActivity"
+            android:theme="@style/TransparentActivityStyle" />
+        <!-- 搜索回调的activity -->
+        <activity
+            android:name=".ui.activity.shop.SearchShopActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
+        <!--选择支付方式的activity-->
+        <activity android:name=".ui.activity.shop.SelectOrderPayTypeActivity" />
+        <!--支付二维码的页面-->
+        <activity android:name=".ui.activity.shop.QRPayActivity"></activity>
     </application>
 
 </manifest>

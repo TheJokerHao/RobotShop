@@ -134,13 +134,17 @@ public class DetectTool {
 //    }
 
 
+    /**
+     * si  加密方式
+     * @param params
+     * @return
+     */
     public static String getSign(HashMap<String, String> params) {
 
         Log.e("11111111111111111", params.toString());
         // 先将参数以其参数名的字典序升序进行排序
         Map<String, String> sortedParams = new TreeMap<String, String>(params);
         Set<Entry<String, String>> entrys = sortedParams.entrySet();
-
 
         // 遍历排序后的字典，将所有参数按"key=value"格式拼接在一起
         StringBuilder basestring = new StringBuilder();

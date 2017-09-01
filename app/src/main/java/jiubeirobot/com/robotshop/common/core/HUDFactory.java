@@ -9,7 +9,7 @@ import java.lang.ref.WeakReference;
 import java.lang.reflect.Field;
 
 /**
- * Created by Admin on 2016/11/9.
+ * Created by TheJoker on 2016/11/9.
  * 单一加载进度对话框   单例模式
  */
 

@@ -34,7 +34,6 @@ public class T {
      * @param message 资源ID
      */
     public static void showShort(int message) {
-
         if (isShow)
             Toast.makeText(BaseApplication.getInstance(), message, Toast.LENGTH_SHORT).show();
     }

@@ -2,7 +2,82 @@
     <string name="app_name">久碑商城</string>
 
     <string name="loading">正在加载...</string>
+    <string name="set_location">坐  标:</string>
+    <string name="my_location">当前地址</string>
+    <string name="details_location">详细地址</string>
+    <string name="count_number">店主账户</string>
+    <string name="robot_number">机器编号</string>
+    <string name="set_finish">设置完成</string>
+    <string name="entrance_for_buyshop">购买商品</string>
+    <string name="entrance_for_ordershop">订单管理</string>
+    <string name="entrance_for_sys_set">系统设置</string>
+    <string name="entrance_for_take_goods">提取货物</string>
+    <string name="manage_login_account_hint">"请输入用户名"</string>
+    <string name="manage_login_password_hint">"请输入密码"</string>
+    <string name="manage_login_login">"登  录"</string>
+    <string name="common_back">"返回"</string>
+    <string name="common_inventory">库存不足</string>
+    <string name="title_shopping_search_input">"搜索你想要的商品"</string>
+    <string name="shopping_list_flilter_sales">销量</string>
 
+
+    <string name="error_call_back_server_error">系统框架返回错误</string>
+    <string name="error_call_back_no_param">服务文件输入元素定义错误(%s)</string>
+    <string name="error_call_back_param_error">输入元素必填！</string>
+    <string name="error_call_back_no_permission">尚未登录，请登录！</string>
+    <string name="error_call_back_user_info_outtime">非法访问令牌！</string>
+    <string name="error_call_back_no_error">连接超时</string>
+    <string name="error_call_back_not_rule">输入元素不满足输入规则</string>
+    <string name="error_call_back_no_user">用户不存在</string>
+    <string name="shopping_cart_settle_accounts">去结算</string>
+    <string name="shopping_cart_be_paid">待支付</string>
+    <string name="shopping_cart_total_count">共计</string>
+    <string name="shopping_cart_total">商品总金额</string>
+    <string name="common_buy_card">"购物车"</string>
+    <string name="check_order">"确认订单"</string>
+    <string name="inilite_set">"初始设置"</string>
+    <string name="mobile_number_error">"请输入正确的手机号码"</string>
+    <string name="sale_order">"销售订单"</string>
+    <string name="extract_order">"提货订单"</string>
+    <string name="shopping_check_submit_order">"提交订单"</string>
+    <string name="shopping_check_note_information">备注信息</string>
+    <string name="shopping_check_invoice">开具发票</string>
+    <string name="shopping_check_invoice_type">发票类型</string>
+    <string name="shopping_check_no_invoice">不开发票</string>
+    <string name="shopping_check_general_invoice">普通发票</string>
+    <string name="shopping_check_add_val_invoice">增值税发票</string>
+    <string name="shopping_check_do_without">不需要</string>
+    <string name="shopping_list_no_search_result">"抱歉，没有找到符合条件的商品"</string>
+    <string name="shopping_list_hot_recommend">"热门推荐"</string>
+    <string name="shopping_list_recent_search">"最近搜索"</string>
+    <string name="shopping_list_delete_search_recode">确定要清空最近搜索吗？</string>
+    <string name="shopping_check_des_hint">选填，给我们留言（45个字以内）</string>
+    <string name="shopping_pay_type">订单支付</string>
+    <string name="shopping_pay_type_please">请选择支付方式</string>
+    <string name="shopping_pay_alipay">支付宝支付</string>
+    <string name="shopping_pay_alipay_hint">支付服务由支付宝提供</string>
+    <string name="shopping_pay_wechatpay">微信支付</string>
+    <string name="shopping_pay_wechatpay_hint">推荐安装微信5.0及以上版本的用户使用</string>
+    <string name="shopping_pay_scan_wechatpay">请用微信扫一扫支付</string>
+    <string name="shopping_pay_scan_alipay">请用支付宝扫一扫支付</string>
+    <string name="shopping_pay_cashpay">现金支付</string>
+    <string name="shopping_pay_cashpay_hint">请联系服务员已确认支付完成并提货</string>
+    <string name="common_timeout_pay">超时未付款</string>
+    <string name="system_title_text">"系统管理"</string>
+    <string name="pay_type_title">"订单支付"</string>
+    
+    
+
+    <!--系统设置里面的-->
+
+    <string name="btn_version_up">"版本更新"</string>
+    <string name="btn_clear_cache">"清除缓存"</string>
+    <string name="btn_retroaction">"意见反馈"</string>
+    <string name="btn_Initia_set">"初始设置"</string>
+    <string name="btn_order_manage">"订单管理"</string>
+    <string name="btn_about_us">"关于我们"</string>
+    <string name="submit">"确定"</string>
+    <string name="cancel">"取消"</string>
 
 
 </resources>

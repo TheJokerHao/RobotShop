@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context="jiubeirobot.com.robotshop.ui.activity.manange.LoginManagerActivity">
+
+
+    <LinearLayout
+        android:layout_width="@dimen/common_margin410dp"
+        android:layout_height="@dimen/common_margin107dp"
+        android:layout_marginTop="@dimen/common_margin36dp"
+        android:background="@drawable/shape_input_circular_boder"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/common_margin20dp"
+                android:layout_marginRight="@dimen/common_margin30dp"
+                android:src="@mipmap/manage_login_acount" />
+
+            <EditText
+                android:id="@+id/et_manage_account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+
+                android:hint="请输入用户名"
+                android:inputType="number"
+                android:textColor="@color/color_33"
+                android:textSize="@dimen/common_size18sp"
+                tools:text="13800138200" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:background="@color/color_ee" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/common_margin20dp"
+                android:layout_marginRight="@dimen/common_margin30dp"
+                android:src="@mipmap/manage_login_password" />
+
+            <EditText
+                android:id="@+id/et_manage_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="请输入密码"
+                android:inputType="textPassword"
+                android:src="@mipmap/manage_login_password"
+                android:textColor="@color/color_33"
+                tools:text="13800138200" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_manage_login"
+        android:layout_width="wrap_content"
+        android:layout_height="54dp"
+        android:layout_margin="@dimen/common_margin10dp"
+        android:background="@drawable/shape_btn_login"
+        android:paddingLeft="@dimen/common_margin50dp"
+        android:paddingRight="@dimen/common_margin50dp"
+        android:text="@string/manage_login_login"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/common_size24sp" />
+
+
+</LinearLayout>
