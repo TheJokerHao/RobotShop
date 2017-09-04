@@ -34,6 +34,7 @@ public class QRPayActivity extends BaseActivity {
     private long millisInFuture = 1800000;//30分钟 = 1800000毫秒
     private long countDownInterval = 1000;
     private CountDownTimer countDownTime; //计时类
+
     @Override
     public int pageLayout() {
         return R.layout.activity_qrpay;
@@ -54,6 +55,7 @@ public class QRPayActivity extends BaseActivity {
             public void onTick(long millisUntilFinished) {
                 L.i("millisUntilFinished：" + millisUntilFinished);
             }
+
             @Override
             public void onFinish() {
                 T.showToCenter(getString(R.string.common_timeout_pay));
@@ -62,6 +64,7 @@ public class QRPayActivity extends BaseActivity {
             }
         };
     }
+
     /**
      * 定义请求数据的方法
      */
@@ -70,7 +73,12 @@ public class QRPayActivity extends BaseActivity {
 
     @Override
     public void onSuccess(BaseBean bean, int flag) {
+        switch (flag) {
+            default:
+                break;
+        }
     }
+
     @OnClick({R.id.llyt_back})
     public void onClick(View view) {
         switch (view.getId()) {
